@@ -1,0 +1,61 @@
+{
+  "id": "ying-v1",
+  "version": 1,
+  "char": "赢",
+  "pinyin": "yíng",
+  "definition": "在比赛中获胜。",
+  "intro": "这个字很复杂？我们一块一块看。",
+  "outro": "你找到方法了。我们把复杂的字，一块一块看清楚。",
+  "components": [
+    {
+      "id": "wang",
+      "char": "亡",
+      "label": "小帽",
+      "line": "亡像小帽。",
+      "color": "#557967",
+      "start": 0,
+      "end": 3,
+      "position": "最上面"
+    },
+    {
+      "id": "kou",
+      "char": "口",
+      "label": "呼唤",
+      "line": "口来呼唤。",
+      "color": "#b56c46",
+      "start": 3,
+      "end": 6,
+      "position": "小帽的下面"
+    },
+    {
+      "id": "yue",
+      "char": "月",
+      "label": "月亮",
+      "line": "月亮照路。",
+      "color": "#ac8535",
+      "start": 6,
+      "end": 10,
+      "position": "下方左边"
+    },
+    {
+      "id": "bei",
+      "char": "贝",
+      "label": "贝壳",
+      "line": "贝壳作伴。",
+      "color": "#578692",
+      "start": 10,
+      "end": 14,
+      "position": "下方中间"
+    },
+    {
+      "id": "fan",
+      "char": "凡",
+      "label": "向前",
+      "line": "平凡的我，一步一步向前。",
+      "color": "#87708f",
+      "start": 14,
+      "end": 17,
+      "position": "下方右边"
+    }
+  ]
+}
