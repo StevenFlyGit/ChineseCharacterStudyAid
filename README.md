@@ -9,7 +9,7 @@ npm install
 npm run dev
 ~~~
 
-打开 http://127.0.0.1:5193 。Vite 5193，Express 3019。首页输入“赢”后点击“帮我认识”，或点击“赢”字卡进入学习；推荐区的“镜、藏、警”暂未开放，会明确提示。最近学习过的字保存在本机，可点选再次学习。“一分钟路演”自动推进开场、五块聚焦和五句故事，拼回及辨认等待实际操作。
+打开 http://127.0.0.1:5193 。Vite 5193，Express 3019。首页输入“赢”后点击“帮我认识”，或点击“赢”字卡进入学习；推荐区的“镜、藏、警”暂未开放，会明确提示。最近学习过的字保存在本机，可点选再次学习。结构页按“亡在上、口在中、月贝凡在下”展开，直接点字块高亮并朗读位置，可自由探索和重复点击重听；点击“听个小故事”直接进入五句故事。“一分钟路演”自动推进开场、五块聚焦和五句故事，拼回及辨认等待实际操作。
 运行模式默认为本地脚本，不查询 API 状态，也不发送模型请求。
 
 构建后运行：
@@ -60,3 +60,18 @@ npm run test:browser
 覆盖 360/390/430px 触摸学习、错误/求助/刷新、桌面、API 错误与迟到响应、预览记录隔离、离线单文件及路演暂停。截图保存 test-output。
 API 成功用例采用明确的受控响应，不代表真实模型已经验证。
 PRD 位于 docs/产品方案.md；路演讲稿位于 docs/三分钟路演.md。
+
+## Cloudflare 部署
+
+已上线：https://mindglyph-mvp.pages.dev/ 。部署记录见 docs/Cloudflare部署.md。
+
+前端和 /api/story 使用 Pages + Pages Functions。首次执行 npx wrangler login 完成浏览器授权，再创建项目：
+
+~~~powershell
+npx wrangler pages project create mindglyph-mvp --production-branch main
+npm run deploy:cloudflare
+~~~
+
+本机模拟云端：npm run dev:cloudflare，访问 http://127.0.0.1:8788。
+默认本地故事和音频可正常运行。真实 AI 需在 Cloudflare 的 Pages 项目设置中添加 AI_API_KEY（Secret）、AI_MODEL、AI_BASE_URL 后重新部署；当前未配置这些值，云端接口会返回明确的 503，前端回退本地故事。
+部署命令只上传 dist 静态文件和 functions，密钥不进入前端构建。

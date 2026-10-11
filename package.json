@@ -9,7 +9,9 @@
     "start": "node server/index.mjs",
     "test": "tsx --test tests/*.test.ts",
     "test:browser": "node tests/browser.mjs",
-    "audio:generate": "node scripts/generate-audio.mjs"
+    "audio:generate": "node scripts/generate-audio.mjs",
+    "dev:cloudflare": "npm run build && wrangler pages dev dist --port 8788",
+    "deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name mindglyph-mvp --branch main --commit-dirty=true"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
@@ -29,6 +31,7 @@
     "playwright": "^1.55.0",
     "tsx": "^4.20.0",
     "typescript": "~5.9.2",
-    "vite": "^7.1.0"
+    "vite": "^7.1.0",
+    "wrangler": "^4.149.0"
   }
 }

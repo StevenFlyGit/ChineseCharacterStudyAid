@@ -10,7 +10,7 @@ const browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'msedg
 await mkdir('test-output',{recursive:true});
 const failures=[];
 async function run(name,fn){try{await fn();console.log('PASS '+name);}catch(e){failures.push(name);console.error('FAIL '+name+': '+e.stack);}}
-async function nextToAssembly(page){await page.getByRole('textbox',{name:'输入一个汉字',exact:true}).fill('赢');await page.getByRole('button',{name:'帮我认识',exact:true}).click();for(let i=0;i<10;i++)await page.locator('.footer-actions .primary-button').click();await page.locator('main[data-stage="assemble"]').waitFor();}
+async function nextToAssembly(page){await page.getByRole('textbox',{name:'输入一个汉字',exact:true}).fill('赢');await page.getByRole('button',{name:'帮我认识',exact:true}).click();for(let i=0;i<6;i++)await page.locator('.footer-actions .primary-button').click();await page.locator('main[data-stage="assemble"]').waitFor();}
 async function assemble(page,touch=false){for(const c of lesson.components){if(touch){await page.getByTestId('tile-'+c.id).tap();await page.getByTestId('slot-'+c.id).tap();}else{await page.getByTestId('tile-'+c.id).click();await page.getByTestId('slot-'+c.id).click();}}await page.locator('main[data-stage="reunite"]').waitFor();await page.getByRole('button',{name:'我记住了，试试看',exact:true}).click();}
 try{
  for(const width of [360,390,430]){
@@ -33,6 +33,17 @@ try{
  await page.screenshot({path:'test-output/mobile-'+width+'-result.png'});await ctx.close();
  });
  }
+ await run('结构页直接点字块、重听、暂停、恢复与故事分开',async()=>{
+ const ctx=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true}),page=await ctx.newPage();
+ await page.goto(url);await page.getByRole('button',{name:'关闭声音',exact:true}).click();await page.getByRole('button',{name:'认识赢',exact:true}).tap();
+ assert.equal(await page.locator('.parts-strip').count(),0);assert.equal(await page.locator('.structure-part').count(),5);assert.equal(await page.locator('.story-art').count(),0);
+ for(const c of [lesson.components[4],lesson.components[1],lesson.components[3]]){const part=page.getByRole('button',{name:'查看'+c.char+'部件',exact:true});await part.tap();assert.equal(await part.getAttribute('aria-pressed'),'true');assert.match(await page.locator('.heading p').innerText(),new RegExp(c.char));await part.tap();assert.equal(await page.locator('main').getAttribute('data-stage'),'focus');}
+ await page.getByRole('button',{name:'暂停一下',exact:true}).tap();assert.equal(await page.getByRole('button',{name:'查看月部件',exact:true}).isDisabled(),true);await page.getByRole('button',{name:'继续学习',exact:true}).tap();
+ await page.reload();assert.equal(await page.getByRole('button',{name:'查看贝部件',exact:true}).getAttribute('aria-pressed'),'true');
+ await page.screenshot({path:'docs/screenshots/mobile-structure.png'});
+ await page.getByRole('button',{name:'听个小故事',exact:true}).tap();assert.equal(await page.locator('main').getAttribute('data-stage'),'story');assert.match(await page.locator('.story-line').innerText(),/亡像小帽/);
+ await page.getByRole('button',{name:'上一步',exact:true}).tap();assert.equal(await page.locator('main').getAttribute('data-stage'),'focus');await page.getByRole('button',{name:'查看凡部件',exact:true}).tap();await page.getByRole('button',{name:'上一步',exact:true}).tap();assert.equal(await page.locator('main').getAttribute('data-stage'),'welcome');await ctx.close();
+ });
  await run('桌面展示与普通话音频内联',async()=>{
  const ctx=await browser.newContext({viewport:{width:1440,height:1000}}),page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);await page.screenshot({path:'test-output/desktop-welcome.png'});await page.getByRole('textbox',{name:'输入一个汉字',exact:true}).fill('赢');await page.getByRole('button',{name:'帮我认识',exact:true}).click();

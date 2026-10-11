@@ -8,7 +8,8 @@ try{
  const phone=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true,reducedMotion:'reduce'}),p=await phone.newPage();
  await p.goto('http://127.0.0.1:5193');await p.screenshot({path:'docs/screenshots/mobile-welcome.png'});
  await p.getByRole('button',{name:'关闭声音',exact:true}).click();await p.getByRole('textbox',{name:'输入一个汉字',exact:true}).fill('赢');await p.getByRole('button',{name:'帮我认识',exact:true}).click();
- for(let i=0;i<5;i++)await p.locator('.footer-actions .primary-button').click();
+ await p.screenshot({path:'docs/screenshots/mobile-structure.png'});
+ await p.getByRole('button',{name:'听个小故事',exact:true}).click();
  await p.screenshot({path:'docs/screenshots/mobile-story.png'});
  for(let i=0;i<5;i++)await p.locator('.footer-actions .primary-button').click();
  await p.screenshot({path:'docs/screenshots/mobile-assemble.png'});

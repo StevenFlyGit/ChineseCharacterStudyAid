@@ -11,12 +11,14 @@ export function reducer(s:Session,a:Action):Session{
  if(a.type==='START')return {...fresh(a.preview),stage:'focus'};
  if(a.type==='NOTICE')return {...s,notice:a.text};
  if(a.type==='NEXT'){
- if(s.stage==='focus'||s.stage==='story')return s.focus<4?{...s,focus:s.focus+1,notice:''}:{...s,stage:s.stage==='focus'?'story':'assemble',focus:0,notice:''};
+ if(s.stage==='focus')return {...s,stage:'story',focus:0,notice:''};
+ if(s.stage==='story')return s.focus<4?{...s,focus:s.focus+1,notice:''}:{...s,stage:'assemble',focus:0,notice:''};
  if(s.stage==='reunite')return {...s,stage:'recognize',notice:''};
  return s;
  }
  if(a.type==='BACK'){
- if(s.stage==='focus'||s.stage==='story'){if(s.focus>0)return {...s,focus:s.focus-1,notice:''};return {...s,stage:s.stage==='story'?'focus':'welcome',focus:s.stage==='story'?4:0,notice:''};}
+ if(s.stage==='focus')return {...s,stage:'welcome',focus:0,notice:''};
+ if(s.stage==='story'){if(s.focus>0)return {...s,focus:s.focus-1,notice:''};return {...s,stage:'focus',focus:0,notice:''};}
  if(s.stage==='assemble')return {...s,stage:'story',focus:4,selected:null,notice:''};
  return s;
  }
