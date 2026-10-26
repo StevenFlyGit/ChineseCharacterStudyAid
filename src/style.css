@@ -21,6 +21,7 @@
 /* Mobile character discovery home */
 .welcome .heading h1{font-size:34px;line-height:1.4;letter-spacing:1px;margin:17px 0 9px}
 .welcome .heading p{font-size:17px;line-height:1.7}
+.heading p .brand-accent{font-style:normal;font-weight:700;color:var(--green);font-size:1.08em;background:linear-gradient(180deg,transparent 58%,#dbe4cd 58%);padding:0 3px;margin:0 -1px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;text-shadow:0 1px 0 #fffef9}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .home-picker{padding-top:23px}
 .character-input-row{display:flex;gap:8px;align-items:stretch}
@@ -72,3 +73,21 @@
 .structure-part:active{transform:scale(.96)}
 .structure-tip{margin:0;color:var(--muted);font-size:12px;line-height:1.8}
 @media(max-height:740px) and (max-width:760px){.focus-art{margin-top:12px}.structure-board{grid-template-rows:64px 64px 96px;gap:5px 14px;margin-bottom:12px}.structure-part{padding:8px 10px}.structure-part:not(.part-wang):not(.part-kou) .piece{height:62px}}
+
+.recognition-options>button{min-height:88px;aspect-ratio:1;display:grid;place-items:center}.recognition-options .glyph{max-height:90px}
+
+.explore-glyph{display:block;width:min(100%,300px);height:300px;margin:0 auto 22px;overflow:visible}.explore-part{cursor:pointer;transition:color .2s}.explore-part:focus-visible{outline:none;filter:drop-shadow(0 0 5px #446b55)}.explore-part[aria-disabled=true]{cursor:default}
+
+/* Separate component buttons, with gaps that remain visible on small screens. */
+.structure-赢{gap:18px 20px}
+.structure-镜{grid-template-columns:1fr 1.55fr;grid-template-rows:76px 76px 82px;gap:16px 24px}
+.structure-镜 .part-metal{grid-column:1;grid-row:1/4}.structure-镜 .part-metal .piece{height:155px;width:80px}
+.structure-镜 .part-stand{grid-column:2;grid-row:1}.structure-镜 .part-sun{grid-column:2;grid-row:2}.structure-镜 .part-legs{grid-column:2;grid-row:3}
+.structure-镜 .part-stand .piece{width:100px;height:60px}.structure-镜 .part-sun .piece{width:86px;height:60px}.structure-镜 .part-legs .piece{width:100px;height:68px}
+.structure-藏{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:80px 172px;gap:24px 16px}
+.structure-藏 .part-grass{grid-column:1/4;grid-row:1}.structure-藏 .part-grass .piece{width:170px;height:68px}
+.structure-藏 .part-left{grid-column:1;grid-row:2}.structure-藏 .part-inner{grid-column:2;grid-row:2}.structure-藏 .part-outer{grid-column:3;grid-row:2}
+.structure-藏 .part-left .piece,.structure-藏 .part-inner .piece{width:74px;height:110px}.structure-藏 .part-outer .piece{height:155px;width:82px}
+.structure-警{grid-template-columns:1fr 1fr;grid-template-rows:74px 90px 100px;gap:16px 24px}
+.structure-警 .part-grass{grid-column:1;grid-row:1}.structure-警 .part-sentence{grid-column:1;grid-row:2}.structure-警 .part-tap{grid-column:2;grid-row:1/3}.structure-警 .part-speech{grid-column:1/3;grid-row:3}
+.structure-警 .part-grass .piece{width:108px;height:56px}.structure-警 .part-sentence .piece{width:94px;height:76px}.structure-警 .part-tap .piece{width:95px;height:125px}.structure-警 .part-speech .piece{width:135px;height:90px}

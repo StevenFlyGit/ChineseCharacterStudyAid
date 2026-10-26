@@ -1,0 +1,25 @@
+.hanzi-glyph{display:block;width:1.2em;height:1.2em;fill:currentColor;pointer-events:none}
+.hanzi-tile strong:has(.hanzi-glyph){height:1.25em;display:flex;justify-content:center;align-items:center}
+.dictionary-entry>strong{display:flex;align-items:center}.dictionary-entry .hanzi-glyph{width:43px;height:43px}
+.write-again-button{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px auto 0;min-height:40px;padding:7px 14px;border-radius:18px;color:#6a713e;background:#b5c58433;font-size:12px}
+.writer-pad{position:relative;aspect-ratio:1;background-image:linear-gradient(#fff8e66b,#fff8e63a),var(--material);border:3px solid #ead6b4;overflow:hidden;cursor:crosshair}
+.writer-host{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.writer-host>svg{display:block;touch-action:none}
+.writing-grid,.writing-guide{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.writing-grid{z-index:0}.writer-host{z-index:1}.writing-guide{z-index:2}
+.writer-pad.is-demo .writer-host{pointer-events:none}
+.stroke-progress{margin-top:14px;text-align:center;color:#6b774a;font-size:12px}
+.stroke-progress .stroke-dots{margin:10px 0 8px;gap:8px;flex-wrap:wrap;justify-content:center}
+.stroke-dots span.finished{background:#658447}.stroke-dots span.active{background:#e7a05a;box-shadow:0 0 0 3px #e7a05a30}
+.trace-instruction{min-height:44px;line-height:1.65}
+.trace-friend .knowledge>strong{display:flex;align-items:center;justify-content:center;gap:7px}
+.trace-friend .knowledge .text-icon{padding:5px}.trace-actions{flex-wrap:wrap;gap:12px;margin-top:10px}
+.trace-actions button{min-height:46px;font-size:13px}.trace-actions .primary-button{min-width:200px}
+@media(max-width:600px){
+ .modal-wide:has(.trace-content){padding:22px 18px 23px;max-height:96svh;border-radius:30px;scroll-padding-block:18px}
+ .trace-content .modal-title{gap:9px;margin:4px 28px 16px 0}.trace-content .modal-title h2{font-size:19px;margin-right:0}.trace-content .modal-title .eyebrow{font-size:10px}
+ .trace-left{max-width:min(330px,calc(100svh - 310px));width:100%}.writer-pad{border-radius:26px}.stroke-progress{font-size:12px;margin-top:12px}.trace-instruction{font-size:13px!important;min-height:40px;margin:0 0 4px}
+ .trace-layout{gap:4px}.trace-friend{padding:2px 0;gap:10px}.trace-friend>img{width:68px;height:80px}.trace-friend .knowledge{max-width:240px;text-align:left;padding:9px 12px}.trace-friend .knowledge>strong{justify-content:flex-start}.knowledge>span{font-size:11px;line-height:1.65}
+ .trace-actions{margin-top:13px;gap:10px}.trace-actions .secondary-button{min-height:44px;padding:10px 14px;font-size:12px}.trace-actions .primary-button{width:100%;min-height:47px;font-size:14px}
+ .write-again-button{min-height:44px;font-size:12px;margin-top:10px}
+}

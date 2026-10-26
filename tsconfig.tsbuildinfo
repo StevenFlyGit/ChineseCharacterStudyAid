@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/glyph.tsx","./src/homepicker.tsx","./src/structureexplorer.tsx","./src/game.ts","./src/main.tsx","./src/vite-env.d.ts","./vite.config.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/glyph.tsx","./src/homepicker.tsx","./src/lessoncontext.ts","./src/structureexplorer.tsx","./src/game.ts","./src/main.tsx","./src/vite-env.d.ts","./vite.config.ts"],"version":"5.9.3"}

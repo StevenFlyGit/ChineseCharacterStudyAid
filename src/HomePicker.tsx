@@ -4,10 +4,10 @@ import {ArrowRight,BookOpen,Sparkles} from 'lucide-react';
 import {Glyph} from './Glyph';
 
 export const RECENT_KEY='mindglyph:recent:v1';
-const recommendations=[{char:'镜',hint:'镜子',ready:false},{char:'藏',hint:'捉迷藏',ready:false},{char:'警',hint:'警察',ready:false},{char:'赢',hint:'五个小部分',ready:true}];
+const recommendations=[{char:'镜',hint:'镜子',ready:true},{char:'藏',hint:'捉迷藏',ready:true},{char:'警',hint:'警察',ready:true},{char:'赢',hint:'五个小部分',ready:true}];
 
 export function readRecent():string[]{
- try{const value:unknown=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(value)?[...new Set(value.filter((c):c is string=>c==='赢'))].slice(0,6):[];}catch{return [];}
+ try{const value:unknown=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(value)?[...new Set(value.filter((c):c is string=>['赢','镜','藏','警'].includes(c)))].slice(0,6):[];}catch{return [];}
 }
 
 export default function HomePicker({recent,onLearn,disabled}:{recent:string[];onLearn:(char:string)=>void;disabled:boolean}){
@@ -16,7 +16,7 @@ export default function HomePicker({recent,onLearn,disabled}:{recent:string[];on
  function learn(raw:string){
   const char=raw.trim();
   if(Array.from(char).length!==1||!/\p{Script=Han}/u.test(char)){setNotice('请输入一个汉字，我们一次认识一个。');return;}
-  if(char!=='赢'){setNotice('“'+char+'”的学习内容还在准备中，先试试“赢”吧。');return;}
+  if(!['赢','镜','藏','警'].includes(char)){setNotice('“'+char+'”的学习内容还在准备中，先试试“赢”吧。');return;}
   setNotice('');onLearn(char);
  }
  function submit(event:FormEvent){event.preventDefault();if(!composing.current)learn(input);}

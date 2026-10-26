@@ -1,0 +1,569 @@
+[
+  {
+    "id": "ying-v1",
+    "version": 1,
+    "char": "赢",
+    "pinyin": "yíng",
+    "definition": "在比赛中获胜。",
+    "intro": "这个字很复杂？我们一块一块看。",
+    "outro": "你找到方法了。我们把复杂的字，一块一块看清楚。",
+    "components": [
+      {
+        "id": "wang",
+        "char": "亡",
+        "label": "小帽",
+        "line": "亡像小帽。",
+        "color": "#557967",
+        "start": 0,
+        "end": 3,
+        "position": "最上面",
+        "strokeIndices": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": "kou",
+        "char": "口",
+        "label": "呼唤",
+        "line": "口来呼唤。",
+        "color": "#b56c46",
+        "start": 3,
+        "end": 6,
+        "position": "小帽的下面",
+        "strokeIndices": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "id": "yue",
+        "char": "月",
+        "label": "月亮",
+        "line": "月亮照路。",
+        "color": "#ac8535",
+        "start": 6,
+        "end": 10,
+        "position": "下方左边",
+        "strokeIndices": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "bei",
+        "char": "贝",
+        "label": "贝壳",
+        "line": "贝壳作伴。",
+        "color": "#578692",
+        "start": 10,
+        "end": 14,
+        "position": "下方中间",
+        "strokeIndices": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      {
+        "id": "fan",
+        "char": "凡",
+        "label": "向前",
+        "line": "平凡的我，一步一步向前。",
+        "color": "#87708f",
+        "start": 14,
+        "end": 17,
+        "position": "下方右边",
+        "strokeIndices": [
+          14,
+          15,
+          16
+        ]
+      }
+    ],
+    "strokeCount": 17,
+    "lessonId": "ying-v1",
+    "target": "赢",
+    "choices": [
+      "赢",
+      "营",
+      "迎",
+      "盈",
+      "影",
+      "竟",
+      "竞",
+      "嬴",
+      "羸"
+    ],
+    "defaultChoices": [
+      "赢",
+      "营",
+      "迎",
+      "盈",
+      "影",
+      "竟",
+      "竞",
+      "嬴",
+      "羸"
+    ],
+    "candidates": [
+      {
+        "char": "赢",
+        "type": "正确答案",
+        "reason": "保留亡、口和下方月、贝、凡的完整组合。",
+        "tier": "basic"
+      },
+      {
+        "char": "营",
+        "type": "同音；部分形似",
+        "reason": "同读 yíng；都有上下排列和口形，但营有草字头，下方没有月、贝、凡。",
+        "tier": "basic"
+      },
+      {
+        "char": "迎",
+        "type": "同音",
+        "reason": "同读 yíng；观察左下方的走之。",
+        "tier": "basic"
+      },
+      {
+        "char": "盈",
+        "type": "同音",
+        "reason": "同读 yíng；下方是皿，字形较短。",
+        "tier": "basic"
+      },
+      {
+        "char": "影",
+        "type": "近音",
+        "reason": "yǐng，声调不同；右边有三撇。",
+        "tier": "basic"
+      },
+      {
+        "char": "竟",
+        "type": "结构比较",
+        "reason": "上下结构，整体轮廓有部分相似；比赢短，下方是儿。并非同音字。",
+        "tier": "basic"
+      },
+      {
+        "char": "竞",
+        "type": "结构比较",
+        "reason": "上下结构，整体轮廓有部分相似；下方是兄，没有月、贝、凡。并非同音字。",
+        "tier": "basic"
+      },
+      {
+        "char": "嬴",
+        "type": "强形似；同音",
+        "reason": "同读 yíng；下方中间是女，赢的对应位置是贝。",
+        "tier": "advanced"
+      },
+      {
+        "char": "羸",
+        "type": "强形似",
+        "reason": "读 léi；下方中间是羊，赢的对应位置是贝。",
+        "tier": "advanced"
+      }
+    ]
+  },
+  {
+    "id": "jing-v1",
+    "char": "镜",
+    "pinyin": "jìng",
+    "definition": "镜子能照出自己的样子。",
+    "rootStructure": "钅 + 竟",
+    "structure": "钅 +（立 / 日 / 儿）",
+    "layout": "左边钅；右边从上到下是立、日、儿。",
+    "story": "亮亮的镜框，镜子立起来。太阳照过来，小朋友笑起来。",
+    "choices": [
+      "镜",
+      "境",
+      "竟",
+      "竞",
+      "锐",
+      "锦",
+      "景",
+      "静",
+      "惊"
+    ],
+    "components": [
+      {
+        "id": "metal",
+        "char": "钅",
+        "displayName": "金字旁",
+        "position": "左边",
+        "strokeIndices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "anchor": "亮镜框",
+        "line": "亮亮的镜框。",
+        "color": "#557967",
+        "focusText": "金字旁，在左边。",
+        "label": "镜框",
+        "slot": [
+          5,
+          12,
+          30,
+          80
+        ]
+      },
+      {
+        "id": "stand",
+        "char": "立",
+        "displayName": "立",
+        "position": "右上方",
+        "strokeIndices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "anchor": "立起来",
+        "line": "镜子立起来。",
+        "color": "#b56c46",
+        "focusText": "立，在右上方。",
+        "label": "立起来",
+        "slot": [
+          44,
+          5,
+          50,
+          28
+        ]
+      },
+      {
+        "id": "sun",
+        "char": "日",
+        "displayName": "日",
+        "position": "右边中间",
+        "strokeIndices": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "anchor": "太阳",
+        "line": "太阳照过来。",
+        "color": "#ac8535",
+        "focusText": "日，在右边中间。",
+        "label": "太阳",
+        "slot": [
+          47,
+          37,
+          46,
+          25
+        ]
+      },
+      {
+        "id": "legs",
+        "char": "儿",
+        "displayName": "儿",
+        "position": "右下方",
+        "strokeIndices": [
+          14,
+          15
+        ],
+        "anchor": "小朋友",
+        "line": "小朋友笑起来。",
+        "color": "#578692",
+        "focusText": "儿，在右下方。",
+        "label": "小朋友",
+        "slot": [
+          44,
+          68,
+          50,
+          28
+        ]
+      }
+    ],
+    "strokeCount": 16,
+    "defaultChoices": [
+      "镜",
+      "境",
+      "竟",
+      "竞",
+      "锐",
+      "锦",
+      "景",
+      "静",
+      "惊"
+    ],
+    "version": 1,
+    "intro": "这个字很复杂？我们一块一块看。",
+    "outro": "你找到方法了。我们把复杂的字，一块一块看清楚。"
+  },
+  {
+    "id": "cang-v1",
+    "char": "藏",
+    "pinyin": "cáng",
+    "definition": "把东西放好，不让它露出来。",
+    "rootStructure": "艹 + 臧",
+    "structure": "艹 /（爿 + 臣 + 戈）",
+    "layout": "艹在最上；爿在下方左边；臣在下方里面；戈的原笔画围在外侧。",
+    "story": "草丛下，小门旁，宝盒藏好了，弯弯的围边护着它。",
+    "choices": [
+      "藏",
+      "葬",
+      "茂",
+      "蔽",
+      "苍",
+      "仓",
+      "舱",
+      "脏",
+      "臧"
+    ],
+    "components": [
+      {
+        "id": "grass",
+        "char": "艹",
+        "displayName": "草字头",
+        "position": "最上面",
+        "strokeIndices": [
+          0,
+          1,
+          2
+        ],
+        "anchor": "草丛",
+        "line": "草丛下。",
+        "color": "#557967",
+        "focusText": "草字头，在最上面。",
+        "label": "草丛",
+        "slot": [
+          15,
+          2,
+          72,
+          22
+        ]
+      },
+      {
+        "id": "left",
+        "char": "爿",
+        "displayName": "左边字块",
+        "position": "下方左边",
+        "strokeIndices": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "anchor": "小门",
+        "line": "小门旁。",
+        "color": "#b56c46",
+        "focusText": "左边字块，在下方左边。",
+        "label": "小门",
+        "slot": [
+          5,
+          30,
+          28,
+          60
+        ]
+      },
+      {
+        "id": "inner",
+        "char": "臣",
+        "displayName": "里面字块",
+        "position": "下方里面",
+        "strokeIndices": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "anchor": "宝盒",
+        "line": "宝盒藏好了。",
+        "color": "#ac8535",
+        "focusText": "里面字块，在下方里面。",
+        "label": "宝盒",
+        "slot": [
+          35,
+          38,
+          30,
+          47
+        ]
+      },
+      {
+        "id": "outer",
+        "char": "戈",
+        "displayName": "外侧字块",
+        "position": "下方外侧",
+        "strokeIndices": [
+          3,
+          14,
+          15,
+          16
+        ],
+        "anchor": "围边",
+        "line": "弯弯的围边护着它。",
+        "color": "#578692",
+        "focusText": "外侧字块，在下方外侧。",
+        "label": "围边",
+        "slot": [
+          68,
+          28,
+          28,
+          66
+        ]
+      }
+    ],
+    "strokeCount": 17,
+    "defaultChoices": [
+      "藏",
+      "葬",
+      "茂",
+      "蔽",
+      "苍",
+      "仓",
+      "舱",
+      "脏",
+      "臧"
+    ],
+    "version": 1,
+    "intro": "这个字很复杂？我们一块一块看。",
+    "outro": "你找到方法了。我们把复杂的字，一块一块看清楚。"
+  },
+  {
+    "id": "jing-guard-v1",
+    "char": "警",
+    "pinyin": "jǐng",
+    "definition": "提醒大家注意安全；警察的警。",
+    "rootStructure": "敬 + 言",
+    "structure": "（艹 / 句） + 攵 / 言",
+    "layout": "艹在左上；句在艹下面；攵在右上；言横跨下方。",
+    "story": "草地旁，有一句话，写成文字：“过马路，慢慢走。”",
+    "choices": [
+      "警",
+      "敬",
+      "誓",
+      "誉",
+      "惊",
+      "景",
+      "井",
+      "静",
+      "擎"
+    ],
+    "components": [
+      {
+        "id": "grass",
+        "char": "艹",
+        "displayName": "草字头",
+        "position": "左上方",
+        "strokeIndices": [
+          0,
+          1,
+          2
+        ],
+        "anchor": "草地",
+        "line": "草地旁。",
+        "color": "#557967",
+        "focusText": "草字头，在左上方。",
+        "label": "草地",
+        "slot": [
+          4,
+          1,
+          46,
+          22
+        ]
+      },
+      {
+        "id": "sentence",
+        "char": "句",
+        "displayName": "句",
+        "position": "草字头的下面",
+        "strokeIndices": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "anchor": "一句话",
+        "line": "有一句话。",
+        "color": "#b56c46",
+        "focusText": "句，在草字头的下面。",
+        "label": "一句话",
+        "slot": [
+          5,
+          25,
+          46,
+          28
+        ]
+      },
+      {
+        "id": "tap",
+        "char": "攵",
+        "displayName": "反文旁",
+        "position": "右上方",
+        "strokeIndices": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "anchor": "文字",
+        "line": "写成文字：",
+        "color": "#ac8535",
+        "focusText": "反文旁，在右上方，样子有点像文。",
+        "shapeAssociation": "看起来有点像文，但仍是攵（反文旁），不能替换字形或解释为文字的文。",
+        "associationText": "攵的形状有点像文，借它联想文字；实际字块仍是攵，不替换成文。",
+        "label": "文字",
+        "slot": [
+          57,
+          3,
+          39,
+          48
+        ]
+      },
+      {
+        "id": "speech",
+        "char": "言",
+        "displayName": "言",
+        "position": "下方",
+        "strokeIndices": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "anchor": "慢慢走",
+        "line": "过马路，慢慢走。",
+        "color": "#578692",
+        "focusText": "言，在下方。",
+        "label": "慢慢走",
+        "slot": [
+          14,
+          59,
+          75,
+          37
+        ]
+      }
+    ],
+    "strokeCount": 19,
+    "storyNote": "文字提醒是本次故事的场景。攵与文仅作形状类比，结构展示、部件名称和拼回仍使用真实的攵；言对应下方的提醒内容。",
+    "scene": "草地边的一块提示牌，文字“过马路，慢慢走”随言字块出现。",
+    "defaultChoices": [
+      "警",
+      "敬",
+      "誓",
+      "誉",
+      "惊",
+      "景",
+      "井",
+      "静",
+      "擎"
+    ],
+    "version": 1,
+    "intro": "这个字很复杂？我们一块一块看。",
+    "outro": "你找到方法了。我们把复杂的字，一块一块看清楚。"
+  }
+]
